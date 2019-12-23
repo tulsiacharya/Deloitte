@@ -1,0 +1,27 @@
+import java.util.*;
+public class Reverse
+{
+	public static void main(String[]args)
+	{
+		String str;
+		Scannner sc = new Scanner(System.in);
+		str=sc.next();
+		char cho[]=new char[str.lenght()];
+		char chn[]=new char[str.length()];
+		ch=str.tocharArray();
+		int count=0;
+		int j=str.lenght-1;
+		for(int i=0;i<str.length;i++)
+		{
+			chn[i]=cho[j--];
+			if(cho[i]=='a'||cho[i]=='e'||cho[i]=='i'||cho[i]=='o'||cho[i]=='u'||cho[i]=='A'||cho[i]=='E'||cho[i]=='I'||cho[i]=='O'||cho[i]=='U')
+			{
+				count++;
+			}			
+		}
+		System.out.println(Character.toString(chn));
+		System.out.println(count);
+		
+	}
+
+}
