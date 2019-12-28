@@ -1,0 +1,42 @@
+create table employees1
+(
+   EmployeeID integer primary key ,
+
+   EmployeeName  varchar(30) not null,
+  
+   EmployeeAddress varchar(30) constraint empad check(EmployeeAddress not in ('new york','london','paris')),
+  
+   Salary integer  constraint sal check(salary between 20000 and 30000),
+   companyaddress varchar(20) default 'ASV Suntech Park'
+
+)
+
+
+
+insert into employees1 values(1,'yati','banglore',25000,'park anvenue');
+insert into employees1 values(2,'damini','jaipur',27000,null);
+
+
+create table salary
+(
+  employeeid integer primary key,
+  employeepf integer constraint pf check (employeepf >0),
+  employeehra integer constraint hra check (employeehra >0)
+
+)
+
+
+
+
+alter table salary add constraint fks foreign key (employeeid) references employees1(employeeid);
+
+
+create table citizen
+(
+cid integer primary key,
+citizendob Date, 
+citizendod Date,
+constraint chdb check(citizendod >= citizendob)
+
+ 
+)
